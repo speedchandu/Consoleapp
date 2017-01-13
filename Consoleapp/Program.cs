@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using c1=ClassLibraryTest.Computer;
-
+using ClassLibraryTest.Inheritence;
 namespace Consoleapp
 {
     class Program
@@ -91,16 +91,17 @@ namespace Consoleapp
             //s3.Pop();
             //Console.WriteLine($"Number of items : {s3.Count}, TotalItems : {s3.DisplayAll()}");
 
-            Console.WriteLine(c1.Student.Count);
+            ////Static non-static implementation
+            //Console.WriteLine(c1.Student.Count);
 
-            c1.Student.Count = 10;
-            Console.WriteLine(c1.Student.Count);
+            //c1.Student.Count = 10;
+            //Console.WriteLine(c1.Student.Count);
 
-            c1.Student.Count = 5;
-            Console.WriteLine(c1.Student.Count);
+            //c1.Student.Count = 5;
+            //Console.WriteLine(c1.Student.Count);
 
-            c1.Student.AssignCount(100);
-            Console.WriteLine(c1.Student.Count);
+            //c1.Student.AssignCount(100);
+            //Console.WriteLine(c1.Student.Count);
 
             ////queue implemented
             //c1.Queuefirst s1 = new ClassLibraryTest.Computer.Queuefirst();
@@ -118,6 +119,26 @@ namespace Consoleapp
             //s1.Dequque();
             //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
 
+
+
+            ////Inheritence implemented
+            Vehicle v1 = new Vehicle();
+
+            Bus b1 = new Bus("Ba 1 Kha 2222");
+
+            Car c1 = new Car("Ba 1 Cha 2222");
+
+            v1.Run();
+            b1.Run();
+            c1.Run();
+            v1.Stop();
+            b1.Stop();
+            c1.Stop();
+
+            b1.Size();
+            c1.Size();
+
+            
             Console.ReadLine();
         }
     }
