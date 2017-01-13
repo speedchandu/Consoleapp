@@ -12,6 +12,8 @@ namespace WindowsFormsApplicationTest
 {
     public partial class Form2 : Form
     {
+
+
         GenericStack<string> stack = new GenericStack<string>();
         public Form2()
         {
@@ -20,7 +22,11 @@ namespace WindowsFormsApplicationTest
             button1.Click += Display;
             button3.Click += Button3_Click;
             button3.Click += Display;
+
         }
+
+
+
 
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -29,7 +35,10 @@ namespace WindowsFormsApplicationTest
 
         private void Display(object sender, EventArgs e)
         {
-            label1.Text = stack.DisplayAll();
+            //  label1.Text = stack.DisplayAll();
+#if DEBUG
+            Console.WriteLine(stack.DisplayAll());
+#endif
         }
 
         private void Button1_Click(object sender, EventArgs e)

@@ -83,6 +83,8 @@ namespace ClassLibraryTest.Computer
 
     public class GenericStack<T>
     {
+
+
         private T[] _container = new T[0];
 
         public int Count { get { return _container.Length; } }
@@ -116,17 +118,27 @@ namespace ClassLibraryTest.Computer
 
     public class Student
     {
+        public static int Count=0;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Roll { get; set; }
 
-
+        public Student()
+        {
+            AssignCount(Count++);
+        }
         public override string ToString()
         {
-            string str = $"Id : {this.Id} Roll : {this.Roll} Name : {this.Name}";
+            string str = $"Id : {this.Id} Roll : {this.Roll} Name : {this.Name} Count : {Count}";
             return str;
         }
 
+
+        public static void AssignCount(int a)
+        {
+            Count = a;
+            
+        }
     }
 
     public class Queuefirst

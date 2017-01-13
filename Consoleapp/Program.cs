@@ -76,10 +76,10 @@ namespace Consoleapp
             //s2.Pop();
             //Console.WriteLine($"Number of items : {s2.Count}, TotalItems : {s2.DisplayAll()}");
 
-            //c1.GenericStack<c1.Student> s3  = new c1.GenericStack<c1.Student>();
+            //c1.GenericStack<c1.Student> s3 = new c1.GenericStack<c1.Student>();
             //Console.WriteLine($"Number of items : {s3.Count}, TotalItems : {s3.DisplayAll()}");
 
-            //s3.Push(new c1.Student() {  Id=1, Name="a", Roll="a1"});
+            //s3.Push(new c1.Student() { Id = 1, Name = "a", Roll = "a1" });
             //Console.WriteLine($"Number of items : {s3.Count}, TotalItems : {s3.DisplayAll()}");
             //s3.Push(new c1.Student() { Id = 2, Name = "b", Roll = "b2" });
             //Console.WriteLine($"Number of items : {s3.Count}, TotalItems : {s3.DisplayAll()}");
@@ -91,23 +91,32 @@ namespace Consoleapp
             //s3.Pop();
             //Console.WriteLine($"Number of items : {s3.Count}, TotalItems : {s3.DisplayAll()}");
 
+            Console.WriteLine(c1.Student.Count);
 
+            c1.Student.Count = 10;
+            Console.WriteLine(c1.Student.Count);
 
-            //queue implemented
-            c1.Queuefirst s1 = new ClassLibraryTest.Computer.Queuefirst();
-            Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+            c1.Student.Count = 5;
+            Console.WriteLine(c1.Student.Count);
 
-            s1.Enqueue(1);
-            Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
-            s1.Enqueue(10);
-            Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
-            s1.Enqueue(14);
-            s1.Enqueue(3);
-            s1.Enqueue(2);
-            s1.Enqueue(1);
-            Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
-            s1.Dequque();
-            Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+            c1.Student.AssignCount(100);
+            Console.WriteLine(c1.Student.Count);
+
+            ////queue implemented
+            //c1.Queuefirst s1 = new ClassLibraryTest.Computer.Queuefirst();
+            //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+
+            //s1.Enqueue(1);
+            //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+            //s1.Enqueue(10);
+            //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+            //s1.Enqueue(14);
+            //s1.Enqueue(3);
+            //s1.Enqueue(2);
+            //s1.Enqueue(1);
+            //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
+            //s1.Dequque();
+            //Console.WriteLine($"Number of items : {s1.Count}, TotalItems : {s1.DisplayAll()}");
 
             Console.ReadLine();
         }
