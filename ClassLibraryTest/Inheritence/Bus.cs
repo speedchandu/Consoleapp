@@ -8,7 +8,8 @@ namespace ClassLibraryTest.Inheritence
 {
     public class Bus : Vehicle
     {
-        public Bus(string NumberPlate) : base()
+
+        public Bus(string NumberPlate) : base(NumberPlate)
         {
             this.id=5;
             this.type = "Bus";
@@ -17,6 +18,12 @@ namespace ClassLibraryTest.Inheritence
         public void Size()
         {
             Console.WriteLine("Size is big");
+        }
+
+        public void Run()
+        {
+            Console.WriteLine("Running from Bus");
+            base.Run();
         }
     }
 
@@ -41,7 +48,7 @@ namespace ClassLibraryTest.Inheritence
 
     public class BiCycle :Vehicle
     {
-        public BiCycle()
+        public BiCycle():base("")
         {
 
         }

@@ -24,10 +24,10 @@ namespace ClassLibraryTest.Inheritence
         }
 
 
-        public Vehicle()
-        {
-            _numberPlate = "";
-        }
+        //public Vehicle()
+        //{
+        //    _numberPlate = "";
+        //}
         public Vehicle(string NumberPlate)
         {
             _numberPlate = NumberPlate;
@@ -36,7 +36,7 @@ namespace ClassLibraryTest.Inheritence
         protected int id = 0;
         private int privatemember = 0;
         protected string type = "";
-        public void Run()
+        public virtual void Run()
         {
             Console.WriteLine($"{this.type} Category {this.id} is running");
         }

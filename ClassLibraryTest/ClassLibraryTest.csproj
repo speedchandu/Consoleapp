@@ -47,6 +47,7 @@
     <Compile Include="Inheritence\Vehicle.cs" />
     <Compile Include="Inheritence\_2Wheeler.cs" />
     <Compile Include="math\Arithmetic.cs" />
+    <Compile Include="math\Shape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

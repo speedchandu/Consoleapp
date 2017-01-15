@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using c1=ClassLibraryTest.Computer;
 using ClassLibraryTest.Inheritence;
+using ClassLibraryTest.math;
 namespace Consoleapp
 {
     class Program
@@ -122,23 +123,64 @@ namespace Consoleapp
 
 
             ////Inheritence implemented
-            Vehicle v1 = new Vehicle();
+            //Vehicle v1 = new Vehicle("");
 
-            Bus b1 = new Bus("Ba 1 Kha 2222");
+            //Bus b1 = new Bus("Ba 1 Kha 2222");
 
-            Car c1 = new Car("Ba 1 Cha 2222");
+            //Car c1 = new Car("Ba 1 Cha 2222");
 
-            v1.Run();
-            b1.Run();
-            c1.Run();
-            v1.Stop();
-            b1.Stop();
-            c1.Stop();
+            //v1.Run();
+            //b1.Run();
+            //c1.Run();
+            //v1.Stop();
+            //b1.Stop();
+            //c1.Stop();
 
-            b1.Size();
-            c1.Size();
+            //b1.Size();
+            //c1.Size();
 
-            
+
+            ////polymorphism implemented here
+            //Vehicle v1 = new Vehicle("Vehicle");
+            //Vehicle _bus = new Bus("vehicle bus");
+            //Bus b1 = new Bus("abc bus");
+            ////Vehicle _car = new Car("test car");
+
+            //v1.Run();
+
+            //_bus.Run();
+            ////_bus.Stop();
+
+            //b1.Run();
+            ////b1.Stop();
+
+            //factory pattern implemented here
+            Shape s;
+            Console.WriteLine("Choose option :\n1. Rectangle\n2. Circle");
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    s = new RectangleClass();
+                    break;
+                case 2:
+                    s = new Circle();
+                    break;
+                case 3:
+                    s = new square();
+                    break;
+                default:
+                    s = new RectangleClass();
+                    break;
+            }
+
+            s.GetInput();
+
+            Console.WriteLine($"Area is {s.Area()}");
+            Console.WriteLine($"Perimeter is {s.Perimeter()}");
+
+
+
             Console.ReadLine();
         }
     }
