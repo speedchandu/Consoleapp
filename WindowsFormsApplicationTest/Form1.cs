@@ -26,6 +26,9 @@ namespace WindowsFormsApplicationTest
         private void Button1_Click1(object sender, EventArgs e)
         {
             label2.Text = (count * 3).ToString();
+
+
+            var btn = ((Button)sender).Text;
         }
         int count = 0;
 

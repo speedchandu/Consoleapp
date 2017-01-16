@@ -24,10 +24,10 @@ namespace ClassLibraryTest.Inheritence
         }
 
 
-        //public Vehicle()
-        //{
-        //    _numberPlate = "";
-        //}
+        public Vehicle()
+        {
+            _numberPlate = "";
+        }
         public Vehicle(string NumberPlate)
         {
             _numberPlate = NumberPlate;

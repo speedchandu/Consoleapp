@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using c1=ClassLibraryTest.Computer;
 using ClassLibraryTest.Inheritence;
 using ClassLibraryTest.math;
+using c2 = ClassLibraryTest.MultipleInheritence;
 namespace Consoleapp
 {
     class Program
@@ -154,32 +155,46 @@ namespace Consoleapp
             //b1.Run();
             ////b1.Stop();
 
-            //factory pattern implemented here
-            Shape s;
-            Console.WriteLine("Choose option :\n1. Rectangle\n2. Circle");
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    s = new RectangleClass();
-                    break;
-                case 2:
-                    s = new Circle();
-                    break;
-                case 3:
-                    s = new square();
-                    break;
-                default:
-                    s = new RectangleClass();
-                    break;
-            }
+            ////factory pattern implemented here
+            //Shape s;
+            //Console.WriteLine("Choose option :\n1. Rectangle\n2. Circle");
+            //var input = Console.ReadLine();
+            //int choice = Convert.ToInt32(input);
+            //switch (choice)
+            //{
+            //    case 1:
+            //        s = new RectangleClass();
+            //        break;
+            //    case 2:
+            //        s = new Circle();
+            //        break;
+            //    case 3:
+            //        s = new square();
+            //        break;
+            //    default:
+            //        s = new RectangleClass();
+            //        break;
+            //}
 
-            s.GetInput();
+            //s.GetInput();
 
-            Console.WriteLine($"Area is {s.Area()}");
-            Console.WriteLine($"Perimeter is {s.Perimeter()}");
+            //Console.WriteLine($"Area is {s.Area()}");
+            //Console.WriteLine($"Perimeter is {s.Perimeter()}");
 
 
+
+            //Interface
+            c2.Circle _circle = new ClassLibraryTest.MultipleInheritence.Circle();
+            c2.Rectangle _rectangle = new c2.Rectangle();
+
+            c2.test.testing(_circle);
+            c2.test.testing(_rectangle);
+
+            c2.test.Testperimeter(_circle);
+            c2.test.Testperimeter(_rectangle);
+
+            c2.test _test = new c2.test();
+            _test.Dispose();
 
             Console.ReadLine();
         }

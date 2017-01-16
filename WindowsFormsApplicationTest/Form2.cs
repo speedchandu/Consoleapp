@@ -23,10 +23,16 @@ namespace WindowsFormsApplicationTest
             button3.Click += Button3_Click;
             button3.Click += Display;
 
+
+            button5.Click += GetNumber;
+            button6.Click += GetNumber;
+            button7.Click += GetNumber;
         }
-
-
-
+        string test = "";
+        private void GetNumber(object sender, EventArgs e)
+        {
+            test = textBox3.Text += ((Button)sender).Text;
+        }
 
         private void Button3_Click(object sender, EventArgs e)
         {

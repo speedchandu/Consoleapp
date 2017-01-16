@@ -48,6 +48,7 @@
     <Compile Include="Inheritence\_2Wheeler.cs" />
     <Compile Include="math\Arithmetic.cs" />
     <Compile Include="math\Shape.cs" />
+    <Compile Include="MultipleInheritence\IShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
