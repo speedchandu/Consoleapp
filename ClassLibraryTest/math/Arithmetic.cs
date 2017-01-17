@@ -6,12 +6,41 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTest.math
 {
+    //exception
+
+    [Serializable]
+    public class DivideBy5Exception : Exception
+    {
+        public DivideBy5Exception() { }
+        public DivideBy5Exception(string message) : base(message) { }
+        public DivideBy5Exception(string message, Exception inner) : base(message, inner) { }
+        protected DivideBy5Exception(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
+
+    [Serializable]
+    public class InvalidContentException : Exception
+    {
+        public InvalidContentException() { }
+        public InvalidContentException(string message) : base(message) { }
+        public InvalidContentException(string message, Exception inner) : base(message, inner) { }
+        protected InvalidContentException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
+
     public class Arithmetic
     {
 
 
         public int add(int a,int b)
         {
+            if (a==0 || b==0)
+            {
+                throw new InvalidContentException("Either cannot be 0. Please check the parameters.", new DivideBy5Exception("Number was divide by 5"));
+            }
+
             return a + b;
         }
         public int add(int a, int b, int c)
@@ -72,7 +101,7 @@ namespace ClassLibraryTest.math
                 perimeter = 2 * (length + breadth);
             }
         }
-        
+
 
     }
 

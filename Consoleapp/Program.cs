@@ -182,19 +182,63 @@ namespace Consoleapp
             //Console.WriteLine($"Perimeter is {s.Perimeter()}");
 
 
+            //c2.IArea _iarea;
+            //c2.IPerimeter _Iperi;
 
-            //Interface
-            c2.Circle _circle = new ClassLibraryTest.MultipleInheritence.Circle();
-            c2.Rectangle _rectangle = new c2.Rectangle();
+            ////Interface
+            //c2.Circle _circle = new ClassLibraryTest.MultipleInheritence.Circle();
+            //c2.Rectangle _rectangle = new c2.Rectangle();
 
-            c2.test.testing(_circle);
-            c2.test.testing(_rectangle);
+            //_iarea = _circle as c2.IArea;
+            //_iarea = (c2.IArea)_circle;
 
-            c2.test.Testperimeter(_circle);
-            c2.test.Testperimeter(_rectangle);
 
-            c2.test _test = new c2.test();
-            _test.Dispose();
+
+            //c2.test.testing(_circle);
+            //c2.test.testing(_rectangle);
+
+            //c2.test.Testperimeter(_circle);
+            //c2.test.Testperimeter(_rectangle);
+
+            //c2.test _test = new c2.test();
+            //_test.Dispose();
+
+            //int i = 0;
+            //Console.WriteLine(10 / i);
+
+
+
+
+            ////Exception Handling
+            //try
+            //{
+            //    int i = 10;
+            //    Console.WriteLine(10 / i);
+
+            //    Console.WriteLine("EOF");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.ToString());
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("Call From Finally");
+            //}
+
+            try
+            {
+                ClassLibraryTest.math.Arithmetic a1 = new Arithmetic();
+                a1.add(1, 1);
+                a1.add(1, 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+
+
 
             Console.ReadLine();
         }
