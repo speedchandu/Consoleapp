@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using c1=ClassLibraryTest.Computer;
+using c1 = ClassLibraryTest.Computer;
 using ClassLibraryTest.Inheritence;
 using ClassLibraryTest.math;
 using c2 = ClassLibraryTest.MultipleInheritence;
+using System.Runtime.Remoting.Messaging;
+using System.Reflection;
+using System.Runtime.Remoting.Activation;
+using System.Runtime.Remoting.Contexts;
+
 namespace Consoleapp
 {
     class Program
@@ -226,21 +231,66 @@ namespace Consoleapp
             //    Console.WriteLine("Call From Finally");
             //}
 
-            try
-            {
-                ClassLibraryTest.math.Arithmetic a1 = new Arithmetic();
-                a1.add(1, 1);
-                a1.add(1, 0);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
+            //try
+            //{
+            //    ClassLibraryTest.math.Arithmetic a1 = new Arithmetic();
+            //    a1.add(1, 1);
+            //    a1.add(1, 0);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.ToString());
+            //}
 
+            //int[] a = new int[] {7,2,3,6,7 };
+            //int[] b = new int[] {7,15,9,2,3 };
+            //Console.WriteLine(isPaired(a));
+            //Console.WriteLine(isPaired(b));
 
+            //int count = 1;
+            //string str = (count == 0) ? "Zero" : (count == 1) ? "One" : (count == 2) ? "Two" : "No";
+
+            //Console.WriteLine(str);
 
 
             Console.ReadLine();
+        }
+
+
+
+
+        static int isPaired(int[] a)
+        {
+            int ret = 0;bool  reteven=true, retOdd = true;
+
+            for (int i = 0; i < a.Length; i=i+2)
+            {
+                if (a[i]%2==0)
+                {
+                    reteven = false;
+                }
+            }
+            for (int i = 1; i < a.Length; i=i+2)
+            {
+                if (a[i]%2!=0)
+                {
+                    retOdd = false;
+                }
+            }
+
+            ret = (reteven && retOdd) ? 1 : (reteven || retOdd) ? 0 : 3;
+            //if (reteven && retOdd)
+            //{
+            //    ret= 1;
+            //}
+            //else
+            //{
+            //    ret= 0;
+            //}
+
+
+
+            return ret;
         }
     }
 }
