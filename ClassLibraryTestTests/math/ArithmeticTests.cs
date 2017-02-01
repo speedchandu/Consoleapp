@@ -12,6 +12,7 @@ namespace ClassLibraryTest.math.Tests
     public class ArithmeticTests
     {
         [TestMethod()]
+        [TestCategory("1")][TestCategory("2")] 
         public void addTest()
         {
             Arithmetic arithmetic = new Arithmetic();
@@ -20,6 +21,7 @@ namespace ClassLibraryTest.math.Tests
         }
 
         [TestMethod()]
+        [TestCategory("2")]
         [ExpectedException(typeof(InvalidContentException))]
         public void AddTest2()
         {
