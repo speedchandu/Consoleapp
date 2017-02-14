@@ -21,7 +21,7 @@ namespace TestWebApplication.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Default1Connection", throwIfV1Schema: false)
         {
         }
 
@@ -29,5 +29,7 @@ namespace TestWebApplication.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<TestWebApplication.Models.Product> Products { get; set; }
     }
 }

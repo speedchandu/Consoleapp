@@ -1,0 +1,79 @@
+﻿@model IEnumerable<TestWebApplication.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutModern.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    <div class="pull-right">
+        @using (Html.BeginForm("index", "Contacts", FormMethod.Get))
+        {
+            <input type="text" name="search" value="@ViewBag.search" placeholder="Search by parameters" />
+            <button type="submit" class="btn btn-danger">
+                <span class="glyphicon glyphicon-search" ></span>
+            </button>
+        }
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @{ViewBag.ascending = ViewBag.ascending ?? true;}
+            @Html.ActionLink("Name","Index","Contacts",new { search=ViewBag.search, field="name",ascending=!ViewBag.ascending },null)
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<div class="row">
+    @using (Html.BeginForm("UploadFile", "Contacts", FormMethod.Post, new {enctype="multipart/form-data" }))
+    {
+        <input type="file" name="file" value="" />
+        <input type="text" name="id" value="" />
+        <input type="text" name="i" value="" />
+        <input type="text" name="j" value="" />
+        <input type="text" name="k" value="" />
+
+        <button type="submit">upload</button>
+    }
+    
+
+</div>
