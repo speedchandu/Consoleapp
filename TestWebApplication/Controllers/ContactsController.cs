@@ -12,7 +12,7 @@ namespace TestWebApplication.Controllers
 {
     public class ContactsController : Controller
     {
-        private TestModel db = new TestModel();
+        private TestModel_new db = new TestModel_new();
 
         // GET: Contacts
         public ActionResult Index(string search="", string field="", bool ascending=true)
