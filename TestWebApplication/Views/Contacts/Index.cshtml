@@ -80,7 +80,8 @@
 
 
 <div class="row">
- @using (Ajax.BeginForm("Create","Contacts",new AjaxOptions() { HttpMethod="Post",  LoadingElementId= "oncreateLoad", OnSuccess= "SuccessCreate", OnFailure= "FailureCreate" }))
+
+ @using (Ajax.BeginForm("Create_New","Contacts",new AjaxOptions() { HttpMethod="Post",  LoadingElementId= "oncreateLoad", OnSuccess= "SuccessCreate", OnFailure= "FailureCreate", UpdateTargetId= "AfterCreate" }))
  {
 
     <div class="form-horizontal">
@@ -112,9 +113,10 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
-            <img src="~/Images/assets/loading.gif" id="oncreateLoad" />
+            <img src="~/Images/assets/loading.gif" id="oncreateLoad" class="hidden"/>
         </div>
     </div>
+    <div id="AfterCreate"></div>
  }
 
 
