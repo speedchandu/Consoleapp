@@ -21,6 +21,12 @@ namespace TestWebApplication.Controllers
             return View(await db.Contacts.ToListAsync());
         }
 
+
+        public async Task<ActionResult> Index_Grid()
+        {
+            return View(await db.Contacts.ToListAsync());
+        }
+
         // GET: ContactsAjax/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -33,7 +39,7 @@ namespace TestWebApplication.Controllers
             {
                 return HttpNotFound();
             }
-            return View(contact);
+            return PartialView(contact);
         }
 
         // GET: ContactsAjax/Create
@@ -47,16 +53,16 @@ namespace TestWebApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<string> Create([Bind(Include = "Id,Name,Contact_Number,Address")] Contact contact)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Contact_Number,Address")] Contact contact)
         {
             if (ModelState.IsValid)
             {
                 db.Contacts.Add(contact);
                 await db.SaveChangesAsync();
-                return "Successfully Created";
+                return View("Index");
             }
 
-            return "Unable to create";
+            return View("Index");
         }
 
         // GET: ContactsAjax/Edit/5
@@ -71,7 +77,7 @@ namespace TestWebApplication.Controllers
             {
                 return HttpNotFound();
             }
-            return View(contact);
+            return PartialView(contact);
         }
 
         // POST: ContactsAjax/Edit/5
@@ -102,7 +108,7 @@ namespace TestWebApplication.Controllers
             {
                 return HttpNotFound();
             }
-            return View(contact);
+            return PartialView(contact);
         }
 
         // POST: ContactsAjax/Delete/5

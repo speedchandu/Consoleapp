@@ -15,9 +15,9 @@
 
     @using (Ajax.BeginForm("Create", "ContactsAjax", new AjaxOptions() { UpdateTargetId = "modal_body", HttpMethod = "Get", OnSuccess = "ShowModal" }))
     {
-        <button id="CreateButton" type="submit" class="btn btn-primary btn-lg" >
-                Create
-            </button>
+        <button id="CreateButton" type="submit" class="btn btn-primary btn-lg">
+            Create
+        </button>
     }
 
 </p>
@@ -35,27 +35,55 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contact_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @using (Ajax.BeginForm("Edit", "ContactsAjax",new  { id=item.Id }, new AjaxOptions() { UpdateTargetId = "modal_body", HttpMethod = "Get", OnSuccess = "ShowModal" }))
+                {
+                    <button id="EditButton" type="submit" class="btn btn-primary btn-lg">
+                        Edit
+                    </button>
+                }
+                @using (Ajax.BeginForm("Delete", "ContactsAjax", new { id = item.Id }, new AjaxOptions() { UpdateTargetId = "modal_body", HttpMethod = "Get", OnSuccess = "ShowModal" }))
+                {
+                    <button id="DeleteButton" type="submit" class="btn btn-primary btn-lg">
+                        Delete
+                    </button>
+                }
+                @using (Ajax.BeginForm("Details", "ContactsAjax", new { id = item.Id }, new AjaxOptions() { UpdateTargetId = "modal_body", HttpMethod = "Get", OnSuccess = "ShowModal" }))
+                {
+                    <button id="DetailsButton" type="submit" class="btn btn-primary btn-lg">
+                        Details
+                    </button>
+                }
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+            </td>
+        </tr>
+    }
 
 </table>
 
+
+@*<div class="row">
+    @Html.Partial("Create",new TestWebApplication.Models.Contact())
+</div>
+<div class="row">
+    @{
+        Html.RenderPartial("Create", new TestWebApplication.Models.Contact());
+    }
+</div>*@
 
 
 <!-- Button trigger modal -->
@@ -68,9 +96,9 @@
             <div class="modal-body" id="modal_body">
 
             </div>
-            <div class="modal-footer">
+            @*<div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>

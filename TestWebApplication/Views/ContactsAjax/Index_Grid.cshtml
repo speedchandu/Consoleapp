@@ -1,0 +1,11 @@
+﻿@model IEnumerable<TestWebApplication.Models.Contact>
+@using GridMvc.Html
+
+<h2>Index_Grid</h2>
+
+
+@Html.Grid(Model).Columns(c=> {
+    c.Add(d => d.Name).Titled("Full Name").SetWidth(20).Sortable(true).Filterable(true);
+    c.Add(d => d.Address).SetWidth(10);
+
+}).WithPaging(3)
