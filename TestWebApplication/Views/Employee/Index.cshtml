@@ -1,0 +1,134 @@
+﻿@model TestWebApplication.Models.DashBoardModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutModern.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <div class="panel info-box panel-white">
+            <div class="panel-body">
+                <div class="info-box-stats">
+                    <p class="counter">@Model.Employees</p>
+                    <span class="info-box-title">Number of Employees</span>
+                </div>
+                <div class="info-box-icon">
+                    <i class="icon-users"></i>
+                </div>
+                <div class="info-box-progress">
+                    <div class="progress progress-xs progress-squared bs-n">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="panel info-box panel-white">
+            <div class="panel-body">
+                <div class="info-box-stats">
+                    <p class="counter">@Model.Customers</p>
+                    <span class="info-box-title">Number of Customers</span>
+                </div>
+                <div class="info-box-icon">
+                    <i class="icon-eye"></i>
+                </div>
+                <div class="info-box-progress">
+                    <div class="progress progress-xs progress-squared bs-n">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="panel info-box panel-white">
+            <div class="panel-body">
+                <div class="info-box-stats">
+                    <p class="counter">@Model.Orders</p>
+                    <span class="info-box-title">Number of Orders</span>
+                </div>
+                <div class="info-box-icon">
+                    <i class="icon-calculator"></i>
+                </div>
+                <div class="info-box-progress">
+                    <div class="progress progress-xs progress-squared bs-n">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Employee
+<div class="row">
+    <div class="row">
+        <div class="col-lg-4">
+            Full Name
+        </div>
+        <div class="col-lg-4">
+            Address
+        </div>
+        <div class="col-lg-4">
+            City
+        </div>
+    </div>
+    @{
+        foreach (var item in Model.Emp)
+        {
+            <div class="row">
+                <div class="col-lg-4">
+                    @item.TitleOfCourtesy @item.FirstName @item.LastName
+                </div>
+                <div class="col-lg-4">
+                    @item.Address
+                </div>
+                <div class="col-lg-4">
+                    @item.City
+                </div>
+            </div>
+        }
+
+    }
+
+
+</div>
+Customer
+<div class="row">
+    <div class="row">
+        <div class="col-lg-4">
+            Contact Name
+        </div>
+        <div class="col-lg-4">
+            Address
+        </div>
+        <div class="col-lg-4">
+            City
+        </div>
+    </div>
+    @{
+        foreach (var item in Model.Cust)
+        {
+            <div class="row">
+                <div class="col-lg-4">
+                    @item.ContactName
+                </div>
+                <div class="col-lg-4">
+                    @item.Address
+                </div>
+                <div class="col-lg-4">
+                    @item.City
+                </div>
+            </div>
+        }
+
+    }
+
+
+</div>*@

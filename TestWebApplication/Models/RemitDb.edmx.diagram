@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13ade230982e4a5f808ba7523ae660ce" Name="Diagram1">
+        <EntityTypeShape EntityType="RemitSystem_Northwind_v1Model.CustomerCustomerDemo" Width="1.5" PointX="5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RemitSystem_Northwind_v1Model.CustomerDemographic" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RemitSystem_Northwind_v1Model.Customer" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RemitSystem_Northwind_v1Model.Employee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="RemitSystem_Northwind_v1Model.FK_CustomerCustomerDemo" ManuallyRouted="false" />
+        <AssociationConnector Association="RemitSystem_Northwind_v1Model.FK_CustomerCustomerDemo_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="RemitSystem_Northwind_v1Model.FK_Employees_Employees" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RemitSystem_Northwind_v1Model.Order" Width="1.5" PointX="9.75" PointY="1.125" />
+        <AssociationConnector Association="RemitSystem_Northwind_v1Model.FK_Orders_Customers" />
+        <AssociationConnector Association="RemitSystem_Northwind_v1Model.FK_Orders_Employees" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

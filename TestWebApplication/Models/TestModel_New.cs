@@ -38,11 +38,11 @@ namespace TestWebApplication.Models
         public string Address { get; set; }
     }
 
-    public class Order
+    public class Order_tbl
     {
         public int id { get; set; }
         [Required]
-        public DateTime OrderDate { get; set; }
+        public DateTime Order_Date { get; set; }
         [Required]
         public int Product_ID { get; set; }
         [Required]
