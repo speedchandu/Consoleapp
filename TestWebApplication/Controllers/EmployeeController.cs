@@ -15,7 +15,7 @@ namespace TestWebApplication.Controllers
             DashBoardModel Dbm = new DashBoardModel();
             Dbm.Customers = db.Customers.Count();
             Dbm.Employees = db.Employees.Count();
-            Dbm.Orders = db.Employees.Count();
+            Dbm.Orders = db.Orders.Count();
             return View(Dbm);
         }
     }

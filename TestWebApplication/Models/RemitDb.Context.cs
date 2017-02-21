@@ -30,5 +30,6 @@ namespace TestWebApplication.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<UserTable> UserTables { get; set; }
     }
 }

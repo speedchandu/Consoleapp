@@ -18,7 +18,12 @@ namespace TestWebApplication.Controllers
         // GET: ContactsAjax
         public async Task<ActionResult> Index()
         {
-            return View(await db.Contacts.ToListAsync());
+            if ((string)Session[Utilites.SessionString.username]!=null)
+            {
+                return View(await db.Contacts.ToListAsync());
+            }
+
+            return RedirectToAction("Login", "CustomUser");
         }
 
 
