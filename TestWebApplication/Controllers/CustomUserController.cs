@@ -58,6 +58,7 @@ namespace TestWebApplication.Controllers
                     ModelState.AddModelError("PasswordNotMatched", "Password does not match.");
                     return View(data);
                 }
+
                 //adding session once the authentication is done.
                 Session.Add(Utilites.SessionString.username, ut.EmailAddress);
                 Session.Add(Utilites.SessionString.Role, ut.Role);

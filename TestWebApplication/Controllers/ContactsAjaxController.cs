@@ -11,6 +11,7 @@ using TestWebApplication.Models;
 
 namespace TestWebApplication.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class ContactsAjaxController : Controller
     {
         private TestModel_new db = new TestModel_new();
@@ -18,12 +19,16 @@ namespace TestWebApplication.Controllers
         // GET: ContactsAjax
         public async Task<ActionResult> Index()
         {
-            if ((string)Session[Utilites.SessionString.username]!=null)
+           // if ((string)Session[Utilites.SessionString.username]!=null)
             {
+                HttpCookie cookie = new HttpCookie("Test");
+                cookie.Value = "Hello!";
+                cookie.Expires.AddMinutes(4);
+                this.ControllerContext.HttpContext.Response.Cookies.Add(cookie);
                 return View(await db.Contacts.ToListAsync());
             }
 
-            return RedirectToAction("Login", "CustomUser");
+            //return RedirectToAction("Login", "CustomUser");
         }
 
 
