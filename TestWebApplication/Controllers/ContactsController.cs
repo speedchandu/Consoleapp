@@ -31,6 +31,10 @@ namespace TestWebApplication.Controllers
                         data = data.OrderByDescending(p => p.Name);
                 }
 
+            var cookie = this.ControllerContext.HttpContext.Request.Cookies["Test"];
+
+            ViewBag.CookieValue = cookie.Value;
+
                 return View(data);
 
 
@@ -74,6 +78,12 @@ namespace TestWebApplication.Controllers
         // GET: Contacts/Create
         public ActionResult Create()
         {
+            var cookie = this.ControllerContext.HttpContext.Request.Cookies["Test"];
+
+            cookie.Expires = DateTime.Now.AddHours(-5);
+
+            this.ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+
             return View();
         }
 

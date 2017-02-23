@@ -11,7 +11,7 @@ using TestWebApplication.Models;
 
 namespace TestWebApplication.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Admin")]
     public class ContactsAjaxController : Controller
     {
         private TestModel_new db = new TestModel_new();
@@ -22,7 +22,7 @@ namespace TestWebApplication.Controllers
            // if ((string)Session[Utilites.SessionString.username]!=null)
             {
                 HttpCookie cookie = new HttpCookie("Test");
-                cookie.Value = "Hello!";
+                cookie.Value = "Hello this is from contacts ajax!";
                 cookie.Expires.AddMinutes(4);
                 this.ControllerContext.HttpContext.Response.Cookies.Add(cookie);
                 return View(await db.Contacts.ToListAsync());
